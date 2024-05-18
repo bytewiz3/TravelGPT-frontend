@@ -95,4 +95,11 @@ function setMaket(data) {
   });
 }
 
+// Clear markers
+function clearMarker() {
+  map.clearMap();
+  //   map.remove(marker);
+}
+</script>
+
 
