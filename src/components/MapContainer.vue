@@ -65,4 +65,34 @@ onUnmounted(() => {
   map?.destroy();
 });
 
+// Set marker on the map
+function setMaket(data) {
+  map.clearMap();
+  let list = data.position.map((res) => ({
+    position: new AMap.LngLat(res.split(",")[0], res.split(",")[1]),
+    text: "Restaurants", // Hotels
+    icon: 1,
+  }));
+
+  list.forEach((item) => {
+    // Marker display content, HTML element string
+    const markerContent =
+    //   '<div class="font20 icon-sty">' + `${icons[item?.icon - 1]?.icon}` + "</div>";
+      '<div class="font20 icon-sty">' + `<img src="//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png">` + "</div>";
+
+    const marker = new AMap.Marker({
+      position: item.position,
+      // Pass html to content
+      content: markerContent,
+      // [center bottom] of icon as origin
+      offset: new AMap.Pixel(-13, -30),
+    });
+    var newCenter = [data.position[0].split(",")[0], data.position[0].split(",")[1]];
+    map.setZoom(9);
+    map.setCenter(newCenter);
+    // Add markers to the map
+    map?.add(marker);
+  });
+}
+
 
