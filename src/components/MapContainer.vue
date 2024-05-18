@@ -36,4 +36,29 @@ watch(
   }
 );
 
+onMounted(() => {
+  window._AMapSecurityConfig = {
+    securityJsCode: "492210b60b207632da3b51a4c4b84111",
+  };
+  AMapLoader.load({
+    key: "5ade7b792cef9a3b3969bc39858fccaf",
+    version: "2.0", // Specify the version of JSAPI to load, default is 1.4.15 when omitted
+    plugins: ["AMap.Scale", "AMap.ToolBar", "AMap.LineSearch", "AMap.ControlBar"], //List of plugins to be used, such as scale 'AMap.Scale', support adding multiple like: ['...','...']
+  })
+    .then((AMap) => {
+      map = new AMap.Map("container", {
+        // Set the map container id
+        viewMode: "3D", // Whether it is 3D map mode
+        pitch: 20, // Map pitch angle, valid range 0 degrees - 83 degrees
+        rotateEnable: true, // Whether to enable map rotation interaction, mouse right click + mouse circle movement or keyboard Ctrl + mouse left click circle movement
+        pitchEnable: true, // Whether to enable map tilt interaction, mouse right click + mouse up and down movement or keyboard Ctrl + mouse left click up and down movement
+        zoom: 11, // Initialize the map level
+        center: [116.397428, 39.90923], // Initialize the map center position
+      });
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+});
+
 
