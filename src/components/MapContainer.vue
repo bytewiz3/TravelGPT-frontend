@@ -102,4 +102,26 @@ function clearMarker() {
 }
 </script>
 
+<style scoped lang="scss">
+#container {
+  width: 100%;
+  height: 100vh;
+}
+:deep(.iconfont) {
+  font-size: 20px;
+}
+:deep(.icon-sty) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 8px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+}
+</style>
+
 
