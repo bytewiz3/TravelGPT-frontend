@@ -61,4 +61,8 @@ onMounted(() => {
     });
 });
 
+onUnmounted(() => {
+  map?.destroy();
+});
+
 
