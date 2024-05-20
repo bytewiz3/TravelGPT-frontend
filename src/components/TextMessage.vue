@@ -144,4 +144,127 @@ function copyText(text, message = 'Copied to clipboard') {
 </script>
 
 
+<style lang="scss" scoped>
+.text-message {
+	position: relative;
+	min-width: 30px;
+	min-height: 30px;
+	border-radius: 5px;
+	padding: 15px;
+
+	&_status {
+		position: absolute;
+		top: 10px;
+		left: -20px;
+		color: #909399;
+		.send-sty {
+			margin-top: 4px;
+			cursor: pointer;
+		}
+	}
+
+	&.max-width {
+		max-width: calc(100% - 50px);
+	}
+
+	&.left {
+		// color: rgba(77, 77, 77, 1);
+		background: rgba(190, 225, 231, 0.3);
+		border-radius: 0 20px 20px 20px;
+	}
+
+	&.right {
+		color: #ffffff;
+		background: rgba(92, 120, 158, 1);
+		border-radius: 20px 0 20px 20px;
+	}
+
+	pre {
+		white-space: pre-wrap;
+		overflow: hidden;
+		word-break: break-word;
+		word-wrap: break-word;
+		font-size: 14px;
+		padding: 3px 10px;
+		font-family: 'Microsoft YaHei';
+		line-height: 25px;
+	}
+}
+.live-room-sty {
+	.chat-item-gift,
+	.chat-item-text {
+		display: flex;
+		align-items: center;
+	}
+	.level {
+		display: inline;
+		width: 36px;
+		height: 24px;
+	}
+	.nickname {
+		margin-right: 4px;
+		font-size: 16px;
+		color: var(--secondary-color);
+	}
+	.user-enter {
+		font-size: 16px;
+	}
+	.convention-msg {
+		color: #ff453a;
+	}
+	.gift-count {
+		font-size: 16px;
+		color: #f6b700;
+		&::before {
+			content: 'x';
+			color: #f6b700;
+			font-size: 14px;
+		}
+	}
+}
+:deep(pre img) {
+	display: initial;
+}
+.live-vip {
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+}
+.vip-enter-sty {
+	display: flex;
+	align-items: center;
+	margin-bottom: 4px;
+	padding: 0 10px;
+	background: linear-gradient(99.72deg, #dcafff 7.31%, #ff8cad 92.69%);
+	border-radius: 20px;
+	span {
+		color: #fff73e;
+	}
+}
+.chat-text {
+	img {
+		max-width: none;
+		display: inline;
+	}
+}
+:deep(.highlight) {
+	background-color: yellow;
+}
+:deep(.highlight2) {
+	color: rgb(246, 112, 199);
+}
+:deep(a) {
+	color: rgb(9, 149, 208) !important;
+}
+:deep(.typed-cursor--blink) {
+	display: none;
+}
+:deep(.typed-cursor) {
+	display: none;
+}
+.btns {
+}
+</style>
+
+
 
