@@ -2,7 +2,7 @@
     "name": "explore-easy",
     "version": "1.0.0",
     "description": "vue3 vite",
-    "author": "jay",
+    "author": "Yijie Weng",
     "license": "MIT",
     "scripts": {
         "dev": "vite",
